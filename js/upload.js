@@ -18,13 +18,12 @@ botonSubir.addEventListener("click", async () => {
     const data = await uploadToCloudinary(file);
 
     // URL correcta para DESCARGA de PDFs y DOCX (raw)
-   const descargaURL = `${data.secure_url}?dl=1`;
-
+    const descargaURL = `https://res.cloudinary.com/${data.cloud_name}/raw/upload/fl_attachment/${data.public_id}`;
 
     estado.innerHTML = `
-  ✅ Archivo subido correctamente<br>
-  <a href="${descargaURL}" target="_blank">Descargar evidencia</a>
-`;
+      ✅ Archivo subido correctamente<br>
+      <a href="${descargaURL}" target="_blank">Descargar evidencia</a>
+    `;
   } catch (error) {
     estado.textContent = "❌ Error al subir archivo";
     console.error(error);
