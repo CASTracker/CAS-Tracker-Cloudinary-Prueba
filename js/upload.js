@@ -19,7 +19,9 @@ botonSubir.addEventListener("click", async () => {
 
     estado.innerHTML = `
       ✅ Archivo subido correctamente<br>
-      <a href="${data.secure_url}" target="_blank">Ver evidencia</a>
+      <a href="${data.secure_url.replace('/upload/', '/upload/fl_attachment/')}" target="_blank">
+  Ver evidencia
+</a>
     `;
   } catch (error) {
     estado.textContent = "❌ Error al subir archivo";
