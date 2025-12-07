@@ -21,7 +21,7 @@ botonSubir.addEventListener("click", async () => {
 
     if (file.type === "application/pdf") {
       // ✅ PDFs → descarga directa segura
-      link = `${data.secure_url}?dl=1`;
+      link = `https://res.cloudinary.com/${data.cloud_name}/raw/upload/fl_attachment/${data.public_id}`;
     } else {
       // ✅ Word → fl_attachment funciona perfecto
       link = data.secure_url.replace(
