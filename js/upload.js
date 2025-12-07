@@ -32,7 +32,7 @@ botonSubir.addEventListener("click", async () => {
 
     estado.innerHTML = `
       ✅ Archivo subido correctamente<br>
-      <a href="${link}" target="_blank">Descargar evidencia</a>
+      <a href="${link}" download>Ver la evidencia</a>
     `;
   } catch (error) {
     estado.textContent = "❌ Error al subir archivo";
