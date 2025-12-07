@@ -2,7 +2,7 @@
 
 const inputArchivo = document.getElementById("archivo");
 const botonSubir = document.getElementById("subirBtn");
-const estado = document.getElementById("estado");
+const estado = document.getElementById("estado"); 
 
 botonSubir.addEventListener("click", async () => {
   const file = inputArchivo.files[0];
