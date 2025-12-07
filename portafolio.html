@@ -22,7 +22,9 @@
     <section>
       <h2>Organiza tus documentos CAS</h2>
 
-
+      <label for="archivo">Subir evidencia CAS</label>
+        <input type="file" id="archivo" accept=".pdf,.doc,.docx">
+        <button id="subirBtn">Subir archivo</button>
       
     </section>
   </main>
@@ -32,5 +34,7 @@
 
   <script type="module" src="./firebase-auth.js"></script>
   <script type="module" src="./script.js"></script>
+  <script src="js/cloudinary.js"></script>
+  <script src="js/upload.js"></script>
 </body>
 </html>
