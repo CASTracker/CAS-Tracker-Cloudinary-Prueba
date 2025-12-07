@@ -17,15 +17,25 @@ botonSubir.addEventListener("click", async () => {
   try {
     const data = await uploadToCloudinary(file);
 
+    let link;
+
+    if (file.type === "application/pdf") {
+      // ✅ PDFs → descarga directa segura
+      link = `${data.secure_url}?dl=1`;
+    } else {
+      // ✅ Word → fl_attachment funciona perfecto
+      link = data.secure_url.replace(
+        "/upload/",
+        "/upload/fl_attachment/"
+      );
+    }
+
     estado.innerHTML = `
       ✅ Archivo subido correctamente<br>
-      <a href="${data.secure_url.replace('/upload/', '/upload/fl_attachment/')}" target="_blank">
-  Ver evidencia
-</a>
+      <a href="${link}" target="_blank">Descargar evidencia</a>
     `;
   } catch (error) {
     estado.textContent = "❌ Error al subir archivo";
     console.error(error);
   }
 });
-
