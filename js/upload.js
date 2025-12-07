@@ -1,6 +1,6 @@
 // js/upload.js
 
-const inputArchivo = document.getElementById("archivo");
+const inputArchivo = document.getElementById("archivo"); 
 const botonSubir = document.getElementById("subirBtn");
 const estado = document.getElementById("estado"); 
 
