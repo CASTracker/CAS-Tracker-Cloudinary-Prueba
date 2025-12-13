@@ -20,10 +20,10 @@ botonSubir.addEventListener("click", async () => {
     let link;
 
     if (file.type === "application/pdf") {
-      // ✅ PDFs → descarga directa segura
-      link = `https://res.cloudinary.com/${data.cloud_name}/raw/upload/fl_attachment/${data.public_id}`;
+      // ✅ PDF → descarga forzada REAL (cloud name fijo)
+      link = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}/raw/upload/fl_attachment/${data.public_id}`;
     } else {
-      // ✅ Word → fl_attachment funciona perfecto
+      // ✅ Word → funciona con secure_url
       link = data.secure_url.replace(
         "/upload/",
         "/upload/fl_attachment/"
